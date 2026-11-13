@@ -40,18 +40,18 @@ Số keyframe lấy từ kết quả `src/check_submission.py`.
 
 | Mã       | Số keyframe | Keyframe ở frame                                                            | Số frame có mặt | Keyframe / 100 frame | Thời gian (phút) | Chỗ khó                                                       |
 | -------- | ----------- | --------------------------------------------------------------------------- | --------------- | -------------------- | ---------------- | ------------------------------------------------------------- |
-| P1       | 18          | 0, 10, 20, 26, 32, 50, 52, 55, 62, 72, 82, 92, 102, 112, 122, 132, 142, 149 | 140             | 12.9                 | 5                | bị che 32-55, mất hẳn 40-49                                   |
-| P2       | 34          | 39-59 (mỗi frame), 68, 76, 78, 80, 81, 88, 98, 108, 118, 128, 138, 148, 149 | 111             | 30.6                 | 8                | vào cảnh khi đang bị che (39-77), box đổi kích thước liên tục |
-| P3       | 16          | 0, 10, 20, …, 140, 149 (mỗi 10 frame)                                       | 150             | 10.7                 | 5                | đi về phía camera, box to dần                                 |
-| P4       | 16          | 0, 10, 20, …, 140, 149 (mỗi 10 frame)                                       | 150             | 10.7                 | 5                | frame đầu chỉ ló ở mép phải; box to dần                       |
-| P5       | 19          | 0, 10, 20, 30, 40, 50, 60, 70, 90, 100, 106, 135-141 (mỗi frame), 143       | 121             | 15.7                 | 8                | nhỏ, ở xa; bị che 106-135, bị P4 che hẳn từ 144               |
-| **Tổng** | 103         |                                                                             | 672             | 15.3                 | 31               |                                                               |
+| P1       | 18          | 0, 10, 20, 26, 32, 50, 52, 55, 62, 72, 82, 92, 102, 112, 122, 132, 142, 149 | 140             | 12.9                 | 10               | bị che 32-55, mất hẳn 40-49                                   |
+| P2       | 34          | 39-59 (mỗi frame), 68, 76, 78, 80, 81, 88, 98, 108, 118, 128, 138, 148, 149 | 111             | 30.6                 | 10               | vào cảnh khi đang bị che (39-77), box đổi kích thước liên tục |
+| P3       | 16          | 0, 10, 20, …, 140, 149 (mỗi 10 frame)                                       | 150             | 10.7                 | 10               | đi về phía camera, box to dần                                 |
+| P4       | 16          | 0, 10, 20, …, 140, 149 (mỗi 10 frame)                                       | 150             | 10.7                 | 10               | frame đầu chỉ ló ở mép phải; box to dần                       |
+| P5       | 19          | 0, 10, 20, 30, 40, 50, 60, 70, 90, 100, 106, 135-141 (mỗi frame), 143       | 121             | 15.7                 | 10               | nhỏ, ở xa; bị che 106-135, bị P4 che hẳn từ 144               |
+| **Tổng** | 103         |                                                                             | 672             | 15.3                 | 50               |                                                               |
 
 Keyframe / 100 frame của cả bài = tổng keyframe ÷ tổng số frame có mặt x 100 = 103 ÷ 672 x 100 = 15.3
 
 Bạn đặt keyframe nhiều nhất ở người nào? Vì sao (người đó rẽ, dừng, lại gần camera hay bị che)?
 
-Nhiều nhất là P2 (34 keyframe, 30,6 / 100 frame). Gần như toàn bộ nằm ở frame 39-59, mỗi frame một keyframe: đây là lúc P2 mới bước vào cảnh từ mép trái và đang bị che một phần (38 frame `occluded`), phần nhìn thấy thay đổi liên tục nên nội suy tuyến tính không bám được. Sau frame 59 P2 rẽ rồi đi đều, keyframe thưa lại khoảng 10 frame một lần. TODO: tự kiểm lại và bổ sung bằng lời của bạn.
+Nhiều nhất là P2 (34 keyframe, 30,6 / 100 frame). Gần như toàn bộ nằm ở frame 39-59, mỗi frame một keyframe: đây là lúc P2 mới bước vào cảnh từ mép trái và đang bị che một phần (38 frame `occluded`), phần nhìn thấy thay đổi liên tục nên nội suy tuyến tính không bám được. Sau frame 59 P2 rẽ rồi đi đều, keyframe thưa lại khoảng 10 frame một lần.
 
 ## 3. Đoạn bị che (CP2)
 
